@@ -1,15 +1,22 @@
 <template>
-  <Header />
-  <button v-on:click="say('accueil')">accueil</button>
-  <button v-on:click="say('apropos')">apropos</button>
-  <button v-on:click="say('mentionLegale')">mentionLegale</button>
-  <button v-on:click="say('connexion')">connexion</button>
+  <div>
+    <Header />
+    <h2> {{ pseudo }} !</h2>
+    <button v-on:click="say('accueil')">accueil</button>
+    <button v-on:click="say('apropos')">apropos</button>
+    <button v-on:click="say('mentionLegale')">mentionLegale</button>
+    <button v-on:click="say('connexion')">connexion</button>
 
-  <Accueil v-if="pageMenu == 'accueil'"/>
-  <Apropos v-if="pageMenu == 'apropos'"/>
-  <MentionLegale v-if="pageMenu == 'mentionLegale'"/>
-  <Connexion v-if="pageMenu == 'connexion'"/>
-  <Footer />
+    <Accueil v-if="pageMenu == 'accueil'"/>
+    <Apropos v-if="pageMenu == 'apropos'"/>
+    <MentionLegale v-if="pageMenu == 'mentionLegale'"/>
+    <Connexion v-if="pageMenu == 'connexion'"/>
+    <!-- <connexion />
+    <connexionForm /> -->
+
+    <Footer />
+  </div>
+
 </template>
 
 <script>
@@ -19,6 +26,9 @@ import MentionLegale from './pages/MentionLegale.vue'
 import Connexion from './pages/Connexion.vue'
 import Header from './template/Header'
 import Footer from './template/Footer'
+// import connexion from './components/connexion'
+// import connexionForm from './components/connexionForm'
+// import { mapState } from 'vuex';
 
 export default {
   name: 'App',
@@ -29,12 +39,18 @@ export default {
     Connexion,
     Header,
     Footer,
+    // connexion,
+    // connexionForm
   },
   data(){
     return{
       pageMenu : 'accueil'
     }
   },
+  // computed: {
+  //   ...mapState(["pseudo"]),
+  //   // ...mapState(["password"])
+  // },
   methods: {
     say: function (message) {
       this.pageMenu = (message)
