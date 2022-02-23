@@ -11,9 +11,6 @@
     <Apropos v-if="pageMenu == 'apropos'"/>
     <MentionLegale v-if="pageMenu == 'mentionLegale'"/>
     <Connexion v-if="pageMenu == 'connexion'"/>
-    <!-- <connexion />
-    <connexionForm /> -->
-
     <Footer />
   </div>
 
@@ -26,8 +23,6 @@ import MentionLegale from './pages/MentionLegale.vue'
 import Connexion from './pages/Connexion.vue'
 import Header from './template/Header'
 import Footer from './template/Footer'
-// import connexion from './components/connexion'
-// import connexionForm from './components/connexionForm'
 // import { mapState } from 'vuex';
 
 export default {
@@ -39,18 +34,16 @@ export default {
     Connexion,
     Header,
     Footer,
-    // connexion,
-    // connexionForm
   },
   data(){
     return{
       pageMenu : 'accueil'
     }
   },
-  // computed: {
-  //   ...mapState(["pseudo"]),
-  //   // ...mapState(["password"])
-  // },
+  computed: {
+    // ...mapState(["pseudo"]),
+    // ...mapState(["password"])
+  },
   methods: {
     say: function (message) {
       this.pageMenu = (message)
