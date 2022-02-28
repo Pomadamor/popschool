@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <h2> {{ pseudo }} !</h2>
+    <Master />
     <button v-on:click="say('accueil')">accueil</button>
     <button v-on:click="say('apropos')">apropos</button>
     <button v-on:click="say('mentionLegale')">mentionLegale</button>
@@ -17,13 +17,13 @@
 </template>
 
 <script>
+import Master from './pages/Master.vue'
 import Accueil from './pages/Accueil.vue'
 import Apropos from './pages/Apropos.vue'
 import MentionLegale from './pages/MentionLegale.vue'
 import Connexion from './pages/Connexion.vue'
 import Header from './template/Header'
 import Footer from './template/Footer'
-// import { mapState } from 'vuex';
 
 export default {
   name: 'App',
@@ -32,6 +32,7 @@ export default {
     Apropos,
     MentionLegale,
     Connexion,
+    Master,
     Header,
     Footer,
   },
@@ -40,10 +41,7 @@ export default {
       pageMenu : 'accueil'
     }
   },
-  computed: {
-    // ...mapState(["pseudo"]),
-    // ...mapState(["password"])
-  },
+
   methods: {
     say: function (message) {
       this.pageMenu = (message)
