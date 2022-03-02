@@ -15,6 +15,7 @@ export default {
   data: function() {
     return {
       pseudo: "",
+      plop:"plop"
       // password: "",
     }
   },
@@ -23,6 +24,11 @@ export default {
     // ...mapMutations(["setPassword"]),
     saveConnexion() {
         this.setPseudo(this.pseudo);
+        if(this.pseudo == this.plop){
+          alert("bien joué")
+        }else{
+          alert("tu es mauvais")
+        }
         // this.setPassword(this.password);
     }
   }
