@@ -2,7 +2,7 @@
   <div class="connexion">
       <h1>Connexion</h1>
       <input v-model="pseudo" />
-    <input v-model="password" />
+    <input type="password" v-model="password" />
       <button @click="saveConnexion">Connexion</button>
   </div>
 </template>

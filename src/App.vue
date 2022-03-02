@@ -10,6 +10,7 @@
     <Accueil v-if="pageMenu == 'accueil'"/>
     <Apropos v-if="pageMenu == 'apropos'"/>
     <MentionLegale v-if="pageMenu == 'mentionLegale'"/>
+    <Formulaire v-if="pageMenu == 'formulaire'"/>
     <Connexion v-if="pageMenu == 'connexion'"/>
     <Footer />
   </div>
@@ -24,6 +25,8 @@ import MentionLegale from './pages/MentionLegale.vue'
 import Connexion from './pages/Connexion.vue'
 import Header from './template/Header'
 import Footer from './template/Footer'
+import Formulaire from './pages/Formulaire'
+import { mapState } from 'vuex';
 
 export default {
   name: 'App',
@@ -35,15 +38,26 @@ export default {
     Master,
     Header,
     Footer,
+    Formulaire,
   },
   data(){
     return{
-      pageMenu : 'accueil'
+      pageMenu : 'accueil',
+      plop :""
     }
   },
+  computed: {
+    ...mapState(["pseudo"]),
+  },
+
   methods: {
       say: function (message) {
         this.pageMenu = (message)
+      },
+      redirect(){
+        if( == "plop"){
+          this.pageMenu = 'formulaire'
+        }
       }
   }
 }

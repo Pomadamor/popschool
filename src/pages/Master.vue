@@ -2,6 +2,7 @@
   <div>
 
     <h2> {{ pseudo }} !</h2>
+    <h2> {{ password }} !</h2>
 
   </div>
 
@@ -15,7 +16,7 @@ export default {
 
   computed: {
     ...mapState(["pseudo"]),
-    // ...mapState(["password"])
+    ...mapState(["password"])
   }
 }
 </script>
