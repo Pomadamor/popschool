@@ -2,7 +2,7 @@
   <div class="connexion">
       <h1>Connexion</h1>
       <input v-model="pseudo" />
-    <!-- <input v-model="password" /> -->
+    <input v-model="password" />
       <button @click="saveConnexion">Connexion</button>
   </div>
 </template>
@@ -15,21 +15,21 @@ export default {
   data: function() {
     return {
       pseudo: "",
-      plop:"plop"
-      // password: "",
+      plop:"plop",
+      password: "",
     }
   },
   methods: {
     ...mapMutations(["setPseudo"]),
-    // ...mapMutations(["setPassword"]),
+    ...mapMutations(["setPassword"]),
     saveConnexion() {
         this.setPseudo(this.pseudo);
-        if(this.pseudo == this.plop){
+        if(this.pseudo == this.plop && this.password == this.plop){
           alert("bien joué")
         }else{
           alert("tu es mauvais")
         }
-        // this.setPassword(this.password);
+        this.setPassword(this.password);
     }
   }
 }

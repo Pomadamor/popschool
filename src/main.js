@@ -6,13 +6,18 @@ import App from './App.vue'
 const store = createStore({
   state() {
     return {
-      pseudo: ""
+      pseudo: "",
+      password:"",
     }
   },
   mutations: {
     setPseudo (state, pseudo) {
       console.error("setting pseudo", pseudo)
       state.pseudo = pseudo
+    },
+    setPassword (state, password) {
+      console.error("setting password", password)
+      state.password = password
     }
   }
 });
