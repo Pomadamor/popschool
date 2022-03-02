@@ -41,11 +41,10 @@ export default {
       pageMenu : 'accueil'
     }
   },
-
   methods: {
-    say: function (message) {
-      this.pageMenu = (message)
-    }
+      say: function (message) {
+        this.pageMenu = (message)
+      }
   }
 }
 </script>

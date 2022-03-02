@@ -22,3 +22,7 @@ const app = createApp(App)
 app.use(store);
 
 app.mount("#app")
+
+
+// Différence entre js et php --> Asynchrone 
+// Js lance l'ensemble u code d'un coup et PHP le lit dans l'ordre d'écriture.
