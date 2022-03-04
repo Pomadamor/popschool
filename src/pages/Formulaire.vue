@@ -36,20 +36,27 @@
     export default {
         data() {
           return {
-            formationTabsNews: [
-              {nomFormation: "", dateDebutFormation: '', dateFinFormation: ''},
-            ],
+            formation:[],
+            formationTabsNews: [{
+              nomFormation: "", 
+              dateDebutFormation: '', 
+              dateFinFormation: ''
+            }],
             formationTabs: [
-              {nomFormation: "Chandler Bing", dateDebutFormation: '42/42/42', dateFinFormation: '42/42/42'},
+              {nomFormation: "Chandler Bing", 
+              dateDebutFormation: '42/42/42', 
+              dateFinFormation: '42/42/42'},
             ]
           }
         },
 
       methods: {
         saveFormation: function () {
-          this.formationTabs.push(this.formationTabsNews);
-          alert('vous avez une nouvelle formation', this.formationTabs)
+          this.formation = Object.assign({}, this.formationTabsNews);
+          alert('vous avez une nouvelle formation'+this.formation.nomFormation)
 
+          this.formationTabs.push(this.formation);
+          // alert('vous avez une nouvelle formation'+this.formationTabs[0].nomFormation)
     },
   },
 }
