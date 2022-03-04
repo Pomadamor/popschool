@@ -46,6 +46,8 @@ export default {
       plop :""
     }
   },
+
+  //Ecoute les valeurs qui changent
   computed: {
     ...mapState(["pseudo"]),
   },
@@ -54,11 +56,16 @@ export default {
       say: function (message) {
         this.pageMenu = (message)
       },
-      redirect(){
-        if( == "plop"){
-          this.pageMenu = 'formulaire'
+  },
+
+//Surveille si la valeur change
+  watch: {
+      pseudo: function(nouveauPseudo){
+        // if(this.pseudo!="") ==> if(this.pseudo)
+        if(nouveauPseudo!=""){
+          this.pageMenu='formulaire'
         }
-      }
+    }
   }
 }
 </script>
